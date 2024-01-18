@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool _isGrounded = false;
     [SerializeField] private bool _isTurnToLeft = true;
     [SerializeField] private bool _canControl = true;
+    [SerializeField] private Joystick _joystick;
 
     public Transform groundChecker;
     public float checkGroundRadius = 0.5f;
@@ -46,13 +47,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float directionSide = Input.GetAxisRaw("Horizontal");
+        //float directionSide = Input.GetAxisRaw("Horizontal");
+        float directionSide = _joystick.Horizontal;
 
         if (_isGrounded)
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            if(_joystick.Horizontal != 0)
             {
-                TurnSpriteRenderInRightDirection(directionSide);              
+                TurnSpriteRenderInRightDirection(directionSide);
                 PlayOfMotionAnimation("Walk");
                 _rb.AddForce(transform.right * _speedMovement * directionSide * Time.deltaTime);
             }
@@ -61,6 +63,18 @@ public class PlayerMovement : MonoBehaviour
                 SetVelosityXToZero();
                 StopOfMotionAnimation("Walk");
             }
+
+            //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            //{
+            //    TurnSpriteRenderInRightDirection(directionSide);              
+            //    PlayOfMotionAnimation("Walk");
+            //    _rb.AddForce(transform.right * _speedMovement * directionSide * Time.deltaTime);
+            //}
+            //else
+            //{
+            //    SetVelosityXToZero();
+            //    StopOfMotionAnimation("Walk");
+            //}
         }
         else
         {
