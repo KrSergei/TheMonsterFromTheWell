@@ -219,7 +219,7 @@ TextureImporter:
       213: -2708681702893244588
     second: Exploision_71
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -240,6 +240,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -249,8 +250,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -278,6 +279,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -293,6 +295,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1282,6 +1320,53 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Exploision1: -3128152101396208996
+      Exploision10: -8165266898200149732
+      Exploision11: -6199554411544938465
+      Exploision12: -2403087186052732947
+      Exploision13: 2818470443662656621
+      Exploision14: -3457652755761278122
+      Exploision15: 3723014440964811118
+      Exploision16: 661746995697554375
+      Exploision17: -7134979529285971251
+      Exploision18: 2300848110524444946
+      Exploision19: 478523223593311334
+      Exploision2: 199164442160637565
+      Exploision20: -906171145418917123
+      Exploision21: -7888043318812203943
+      Exploision22: -1796563398184802513
+      Exploision23: 64014098231334166
+      Exploision24: -1834938656932805028
+      Exploision25: 6227567943963542141
+      Exploision26: -8232438692485502486
+      Exploision27: 466277911891582192
+      Exploision28: -5760855353365330090
+      Exploision29: 7416906231051984611
+      Exploision3: -3780497406260324963
+      Exploision30: -1716183326045028863
+      Exploision31: 7244820560754581124
+      Exploision32: -5134410211970413205
+      Exploision33: -5745767396483032426
+      Exploision34: 4697306740822691219
+      Exploision35: 2039957779242741572
+      Exploision36: 4823596091809072362
+      Exploision37: -4239721851996781616
+      Exploision38: -2460538157376424388
+      Exploision39: -1057368312815865325
+      Exploision4: -6783490121784378107
+      Exploision40: 690348807697554014
+      Exploision41: -7340154393513776250
+      Exploision42: 5206529906089062063
+      Exploision43: 6393137457288173861
+      Exploision44: 6218980878307116136
+      Exploision45: 6078442171989441977
+      Exploision46: -8000617844730394299
+      Exploision5: -1968644215157387995
+      Exploision6: -1335564832947253132
+      Exploision7: -2867843910651256569
+      Exploision8: -3673567143175482053
+      Exploision9: -8434197902960895712
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
