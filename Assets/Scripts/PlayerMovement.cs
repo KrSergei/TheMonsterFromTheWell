@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private const string NAME_OF_JUMP_ANIMATION = "Jump";
+    private const string NAME_OF_WALK_ANIMATION = "Walk";
+    private const string NAME_OF_LANDING_ANIMATION = "OnGround";
+
     [SerializeField] private float _speedMovement = 10f;
     [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private float _ratioForceWhenToAir = 0.5f;
@@ -39,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space))
             {
                 _isGrounded = false;
-                PlayOfMotionAnimation("Jump");
+                PlayOfMotionAnimation(NAME_OF_JUMP_ANIMATION);
                 _rb.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
             }
         }
@@ -47,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        //float directionSide = Input.GetAxisRaw("Horizontal");
         float directionSide = _joystick.Horizontal;
 
         if (_isGrounded)
@@ -55,31 +58,19 @@ public class PlayerMovement : MonoBehaviour
             if(_joystick.Horizontal != 0)
             {
                 TurnSpriteRenderInRightDirection(directionSide);
-                PlayOfMotionAnimation("Walk");
+                PlayOfMotionAnimation(NAME_OF_WALK_ANIMATION);
                 _rb.AddForce(transform.right * _speedMovement * directionSide * Time.deltaTime);
             }
             else
             {
                 SetVelosityXToZero();
-                StopOfMotionAnimation("Walk");
+                StopOfMotionAnimation(NAME_OF_WALK_ANIMATION);
             }
-
-            //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-            //{
-            //    TurnSpriteRenderInRightDirection(directionSide);              
-            //    PlayOfMotionAnimation("Walk");
-            //    _rb.AddForce(transform.right * _speedMovement * directionSide * Time.deltaTime);
-            //}
-            //else
-            //{
-            //    SetVelosityXToZero();
-            //    StopOfMotionAnimation("Walk");
-            //}
         }
         else
         {
             TurnSpriteRenderInRightDirection(directionSide);
-            StopOfMotionAnimation("Walk");
+            StopOfMotionAnimation(NAME_OF_WALK_ANIMATION);
             //Уменьшение кооэффициента ускорения, если персонаж в воздухе
             _rb.AddForce(transform.right * _speedMovement * _ratioForceWhenToAir * directionSide * Time.deltaTime);
         }
@@ -119,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             if (CheckGround())
             {
                 _isGrounded = true;
-                PlayOfMotionAnimation("OnGround");
+                PlayOfMotionAnimation(NAME_OF_LANDING_ANIMATION);
                 SetVelosityYToZero();
             }
         }
@@ -130,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.GetComponent<Ground>() != null)
         {
             _isGrounded = false;
-            StopOfMotionAnimation("OnGround");
+            StopOfMotionAnimation(NAME_OF_LANDING_ANIMATION);
         }
     }
 
@@ -158,6 +149,6 @@ public class PlayerMovement : MonoBehaviour
     public void SetNotControl()
     {
         _canControl = false;
-        StopOfMotionAnimation("Walk");
+        StopOfMotionAnimation(NAME_OF_WALK_ANIMATION);
     }
 }
